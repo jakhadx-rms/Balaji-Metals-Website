@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balaji Metals — Scrap Iron, Steel, Copper &amp; Brass Buyers | Jaipur</title>
+<meta name="description" content="Balaji Metals, Jaipur — we buy and sell scrap Iron, Steel, Pipe, Sheets, Copper, Brass, Wire and Hardware. Fair weight, fair rate, same-day pickup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --charcoal:#141416;
+    --charcoal-2:#1d1e21;
+    --crimson:#c8102e;
+    --crimson-dark:#8c0b21;
+    --steel:#7a8188;
+    --steel-light:#c9cdd1;
+    --offwhite:#f5f4f0;
+    --paper:#fbfaf7;
+    --copper:#b5651d;
+    --brass:#c9a24b;
+    --line: rgba(255,255,255,0.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Archivo',sans-serif;
+    background:var(--paper);
+    color:var(--charcoal);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.eyebrow,.logo-word,nav a,.btn{
+    font-family:'Oswald',sans-serif;
+    text-transform:uppercase;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+
+  /* ===== reduced motion ===== */
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ===== TOPBAR ===== */
+  .topbar{
+    background:var(--charcoal);
+    color:var(--steel-light);
+    font-size:13px;
+    letter-spacing:.03em;
+  }
+  .topbar .wrap{
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:8px;padding-bottom:8px;flex-wrap:wrap;gap:6px;
+  }
+  .topbar a{color:var(--steel-light);}
+  .topbar a:hover{color:#fff;}
+  .topbar .tel{color:#fff;font-weight:600;letter-spacing:.04em;}
+  .topbar .tel span{color:var(--crimson);}
+
+  /* ===== HEADER ===== */
+  header.site{
+    background:var(--paper);
+    border-bottom:1px solid rgba(0,0,0,.08);
+    position:sticky;top:0;z-index:50;
+  }
+  header.site .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:14px;padding-bottom:14px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand .mark{
+    width:44px;height:44px;border-radius:50%;
+    background:linear-gradient(135deg,var(--crimson),var(--crimson-dark));
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Oswald',sans-serif;font-weight:700;color:#fff;font-size:17px;
+    letter-spacing:.02em;
+    box-shadow:0 3px 10px rgba(200,16,46,.35);
+  }
+  .brand .name{line-height:1.05;}
+  .brand .name .b1{color:var(--crimson);font-weight:700;font-size:19px;letter-spacing:.02em;}
+  .brand .name .b2{color:var(--charcoal);font-weight:700;font-size:19px;letter-spacing:.02em;}
+  .brand .name .tag{display:block;font-family:'Archivo',sans-serif;text-transform:none;font-size:10.5px;letter-spacing:.14em;color:var(--steel);text-transform:uppercase;margin-top:1px;}
+
+  nav.primary ul{display:flex;gap:30px;}
+  nav.primary a{
+    font-size:13px;font-weight:500;letter-spacing:.06em;color:var(--charcoal);
+    padding:6px 0;border-bottom:2px solid transparent;
+  }
+  nav.primary a:hover{border-color:var(--crimson);color:var(--crimson);}
+
+  .header-cta{display:flex;align-items:center;gap:12px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;letter-spacing:.05em;
+    padding:11px 20px;border-radius:3px;border:2px solid transparent;
+    cursor:pointer;white-space:nowrap;
+  }
+  .btn-primary{background:var(--crimson);color:#fff;}
+  .btn-primary:hover{background:var(--crimson-dark);}
+  .btn-outline{border-color:var(--charcoal);color:var(--charcoal);}
+  .btn-outline:hover{border-color:var(--crimson);color:var(--crimson);}
+  .btn-ghost-light{border-color:rgba(255,255,255,.5);color:#fff;}
+  .btn-ghost-light:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+
+  .navtoggle{display:none;background:none;border:none;cursor:pointer;padding:6px;}
+  .navtoggle span{display:block;width:24px;height:2px;background:var(--charcoal);margin:5px 0;}
+
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    background:var(--charcoal);
+    color:#fff;
+    overflow:hidden;
+    padding:88px 0 96px;
+  }
+  .hero::before{
+    /* diagonal steel-cut edge motif echoing the logo's sweep */
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(115deg, transparent 55%, rgba(200,16,46,.16) 55.4%, rgba(200,16,46,.16) 56.2%, transparent 56.6%),
+      linear-gradient(115deg, transparent 61%, rgba(255,255,255,.05) 61.4%, rgba(255,255,255,.05) 61.8%, transparent 62.2%);
+    pointer-events:none;
+  }
+  .hero .grain{
+    position:absolute;inset:0;opacity:.5;pointer-events:none;
+    background-image: radial-gradient(rgba(255,255,255,.035) 1px, transparent 1px);
+    background-size:3px 3px;
+  }
+  .hero .wrap{position:relative;z-index:2;}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+  .eyebrow{
+    font-size:12.5px;letter-spacing:.22em;color:var(--crimson);
+    display:flex;align-items:center;gap:10px;margin-bottom:18px;font-weight:600;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--crimson);}
+  .hero h1{
+    font-size:clamp(38px,5.4vw,64px);
+    font-weight:700;line-height:1.02;letter-spacing:.005em;
+    margin-bottom:22px;
+  }
+  .hero h1 em{font-style:normal;color:var(--crimson);}
+  .hero p.lead{
+    font-family:'Archivo',sans-serif;font-size:17px;color:var(--steel-light);
+    max-width:480px;margin-bottom:30px;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
+  .hero-materials{
+    display:flex;flex-wrap:wrap;gap:8px 10px;
+  }
+  .hero-materials span{
+    font-size:11.5px;letter-spacing:.08em;color:var(--steel-light);
+    border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:20px;
+    font-family:'Oswald',sans-serif;text-transform:uppercase;
+  }
+
+  /* hero visual: stylised scrap-scale panel */
+  .hero-panel{
+    background:var(--charcoal-2);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:8px;padding:28px;position:relative;
+    box-shadow:0 30px 60px rgba(0,0,0,.4);
+  }
+  .hero-panel .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;}
+  .hero-panel .top .label{font-family:'Oswald',sans-serif;font-size:12px;letter-spacing:.14em;color:var(--steel-light);text-transform:uppercase;}
+  .hero-panel .dot{width:8px;height:8px;border-radius:50%;background:var(--crimson);box-shadow:0 0 0 4px rgba(200,16,46,.18);}
+  .hero-panel .row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:13px 0;border-top:1px solid var(--line);
+    font-family:'Oswald',sans-serif;letter-spacing:.03em;
+  }
+  .hero-panel .row:first-of-type{border-top:none;}
+  .hero-panel .row .mat{color:#fff;font-size:14.5px;}
+  .hero-panel .row .note{color:var(--steel);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;}
+  .hero-panel .cta-line{
+    margin-top:20px;padding-top:18px;border-top:1px dashed rgba(255,255,255,.15);
+    font-size:12.5px;color:var(--steel-light);
+  }
+  .hero-panel .cta-line strong{color:#fff;}
+
+  /* ===== TRUST STRIP ===== */
+  .trust-strip{background:var(--offwhite);border-bottom:1px solid rgba(0,0,0,.06);}
+  .trust-strip .wrap{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    padding:26px 28px;gap:20px;
+  }
+  .trust-item{display:flex;align-items:center;gap:12px;}
+  .trust-item .num{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:15px;color:var(--crimson);
+    border:1.5px solid var(--crimson);width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .trust-item .txt{font-size:13px;color:var(--charcoal);font-weight:500;line-height:1.3;}
+
+  /* ===== SECTION HEADS ===== */
+  section{padding:88px 0;}
+  .sec-head{max-width:640px;margin-bottom:52px;}
+  .sec-head .eyebrow{color:var(--crimson);}
+  .sec-head h2{
+    font-size:clamp(28px,3.6vw,42px);font-weight:700;color:var(--charcoal);
+    line-height:1.08;margin-bottom:14px;
+  }
+  .sec-head p{color:var(--steel);font-family:'Archivo',sans-serif;font-size:15.5px;max-width:520px;}
+  .sec-head.light h2, .sec-head.light p{color:#fff;}
+  .sec-head.light p{color:var(--steel-light);}
+  .sec-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .sec-head.center .eyebrow{justify-content:center;}
+  .sec-head.center p{margin-left:auto;margin-right:auto;}
+
+  /* ===== MATERIALS GRID ===== */
+  .materials{background:var(--paper);}
+  .mat-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+  }
+  .mat-card{
+    background:var(--charcoal);border-radius:6px;padding:26px 20px 22px;
+    text-align:center;position:relative;overflow:hidden;
+    border:1px solid rgba(0,0,0,.06);
+    transition:transform .25s ease;
+  }
+  .mat-card:hover{transform:translateY(-4px);}
+  .mat-card::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--crimson);
+    transform:scaleX(0);transform-origin:left;transition:transform .3s ease;
+  }
+  .mat-card:hover::after{transform:scaleX(1);}
+  .mat-icon{
+    width:64px;height:64px;border-radius:50%;background:var(--charcoal-2);
+    border:1.5px solid var(--crimson);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 16px;
+  }
+  .mat-icon svg{width:30px;height:30px;}
+  .mat-card h3{font-size:14px;color:#fff;font-weight:600;letter-spacing:.06em;margin-bottom:6px;}
+  .mat-card p{font-family:'Archivo',sans-serif;font-size:12px;color:var(--steel-light);text-transform:none;letter-spacing:0;}
+
+  /* ===== HOW IT WORKS ===== */
+  .process{background:var(--offwhite);}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+  .step{padding:0 22px;position:relative;}
+  .step:not(:last-child)::after{
+    content:"";position:absolute;top:26px;right:-12px;width:24px;height:1px;
+    background:repeating-linear-gradient(90deg,var(--steel) 0 6px,transparent 6px 10px);
+  }
+  .step .stepnum{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:34px;color:transparent;
+    -webkit-text-stroke:1.4px var(--crimson);margin-bottom:14px;
+  }
+  .step h3{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:15.5px;letter-spacing:.03em;margin-bottom:8px;color:var(--charcoal);}
+  .step p{font-size:13.5px;color:var(--steel);}
+
+  /* ===== WHY US ===== */
+  .why{background:var(--charcoal);color:#fff;position:relative;overflow:hidden;}
+  .why::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(105deg, transparent 70%, rgba(200,16,46,.14) 70.4%, rgba(200,16,46,.14) 71%, transparent 71.4%);
+    pointer-events:none;
+  }
+  .why .wrap{position:relative;z-index:2;}
+  .why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start;}
+  .why-list{display:grid;gap:26px;}
+  .why-item{display:flex;gap:16px;}
+  .why-item .ico{
+    width:42px;height:42px;flex-shrink:0;border-radius:50%;
+    border:1.5px solid var(--crimson);display:flex;align-items:center;justify-content:center;
+  }
+  .why-item .ico svg{width:20px;height:20px;}
+  .why-item h3{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:14.5px;letter-spacing:.04em;margin-bottom:6px;color:#fff;}
+  .why-item p{font-size:13.5px;color:var(--steel-light);font-family:'Archivo',sans-serif;}
+
+  /* ===== CONTACT ===== */
+  .contact{background:var(--paper);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+  .contact-card{
+    background:var(--charcoal);color:#fff;border-radius:8px;padding:38px 34px;
+    position:relative;overflow:hidden;
+  }
+  .contact-card::before{
+    content:"";position:absolute;top:0;right:0;width:160px;height:160px;
+    background:radial-gradient(circle at top right, rgba(200,16,46,.25), transparent 70%);
+  }
+  .contact-card h3{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:20px;letter-spacing:.03em;margin-bottom:4px;position:relative;}
+  .contact-card .role{font-family:'Archivo',sans-serif;color:var(--steel-light);font-size:13px;margin-bottom:26px;position:relative;}
+  .c-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line);position:relative;}
+  .c-row:first-of-type{border-top:none;}
+  .c-row .ico{width:34px;height:34px;border-radius:50%;background:var(--charcoal-2);border:1px solid rgba(200,16,46,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .c-row .ico svg{width:16px;height:16px;}
+  .c-row .txt{font-family:'Archivo',sans-serif;font-size:14px;color:var(--steel-light);line-height:1.5;}
+  .c-row .txt a{color:#fff;font-weight:600;}
+  .c-row .txt a:hover{color:var(--crimson);}
+  .c-row .txt .gst{font-family:'Oswald',sans-serif;letter-spacing:.04em;color:#fff;font-size:13px;}
+
+  .map-wrap{border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,.08);min-height:420px;}
+  .map-wrap iframe{width:100%;height:100%;min-height:420px;border:0;display:block;}
+
+  /* ===== CLOSING CTA ===== */
+  .closing{
+    background:linear-gradient(120deg,var(--crimson-dark),var(--crimson));
+    color:#fff;text-align:center;padding:64px 0;
+  }
+  .closing h2{font-size:clamp(24px,3.4vw,36px);font-weight:700;margin-bottom:12px;}
+  .closing p{font-family:'Archivo',sans-serif;font-size:15px;color:rgba(255,255,255,.9);margin-bottom:28px;}
+  .closing .btn-primary{background:#fff;color:var(--crimson-dark);}
+  .closing .btn-primary:hover{background:var(--charcoal);color:#fff;}
+  .closing .cbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--charcoal);color:var(--steel-light);padding:40px 0 24px;}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:24px;padding-bottom:24px;border-bottom:1px solid var(--line);}
+  .foot-brand .b1{color:var(--crimson);font-weight:700;}
+  .foot-brand .b2{color:#fff;font-weight:700;}
+  .foot-brand{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:16px;margin-bottom:6px;}
+  .foot-brand + p{font-size:12.5px;color:var(--steel);max-width:280px;}
+  .foot-links{display:flex;gap:40px;flex-wrap:wrap;}
+  .foot-links h4{font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:12px;letter-spacing:.1em;color:#fff;margin-bottom:12px;}
+  .foot-links ul{display:grid;gap:8px;}
+  .foot-links a{font-size:13px;color:var(--steel-light);}
+  .foot-links a:hover{color:var(--crimson);}
+  .foot-bottom{display:flex;justify-content:space-between;padding-top:20px;font-size:12px;color:var(--steel);flex-wrap:wrap;gap:8px;}
+
+  /* whatsapp float */
+  .wa-float{
+    position:fixed;right:22px;bottom:22px;z-index:60;
+    width:56px;height:56px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px rgba(0,0,0,.28);
+  }
+  .wa-float svg{width:28px;height:28px;fill:#fff;}
+  .wa-float:hover{transform:scale(1.06);}
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:980px){
+    nav.primary{display:none;}
+    .navtoggle{display:block;}
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-panel{max-width:460px;}
+    .trust-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .mat-grid{grid-template-columns:repeat(2,1fr);}
+    .steps{grid-template-columns:repeat(2,1fr);row-gap:34px;}
+    .step:nth-child(2)::after{display:none;}
+    .why-grid{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:560px){
+    .header-cta .btn-outline{display:none;}
+    .hero{padding:60px 0 70px;}
+    .mat-grid{grid-template-columns:repeat(2,1fr);}
+    .trust-strip .wrap{grid-template-columns:1fr;}
+    section{padding:60px 0;}
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible{outline:2px solid var(--crimson);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>Tirupati Vihar-6, Shyam Nagar, Benad Road, Jhotwada, Jaipur – 302012 (Raj.)</div>
+    <div><a href="tel:+918094860221" class="tel">Call <span>+91 80948 60221</span></a></div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="mark">BM</span>
+      <span class="name">
+        <span class="b1">Balaji</span> <span class="b2">Metals</span>
+        <span class="tag">Strength · Quality · Trust</span>
+      </span>
+    </a>
+    <nav class="primary">
+      <ul>
+        <li><a href="#materials">Materials</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a href="https://wa.me/918094860221" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="tel:+918094860221" class="btn btn-primary">Call Now</a>
+      <button class="navtoggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<section id="top" class="hero">
+  <div class="grain"></div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Jaipur's Scrap Metal Buyers &amp; Sellers</div>
+        <h1>Your Scrap.<br>Our <em>Fair Weight,</em><br>Fair Rate.</h1>
+        <p class="lead">Balaji Metals buys and sells Iron, Steel, Pipe, Sheets, Copper, Brass, Wire and Hardware scrap. Straightforward weighing, straightforward rates, and pickup arranged the same day.</p>
+        <div class="hero-ctas">
+          <a href="tel:+918094860221" class="btn btn-primary">Call +91 80948 60221</a>
+          <a href="https://wa.me/918094860221" class="btn btn-ghost-light" target="_blank" rel="noopener">Send Photos on WhatsApp</a>
+        </div>
+        <div class="hero-materials">
+          <span>Iron</span><span>Steel</span><span>Pipe</span><span>Sheets</span><span>Copper</span><span>Brass</span><span>Wire</span><span>Hardware</span>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="top">
+          <span class="label">We Buy &amp; Sell</span>
+          <span class="dot"></span>
+        </div>
+        <div class="row"><span class="mat">Iron &amp; Steel</span><span class="note">Buy · Sell</span></div>
+        <div class="row"><span class="mat">Pipe &amp; Sheets</span><span class="note">Buy · Sell</span></div>
+        <div class="row"><span class="mat">Copper &amp; Brass</span><span class="note">Buy · Sell</span></div>
+        <div class="row"><span class="mat">Wire &amp; Hardware</span><span class="note">Buy · Sell</span></div>
+        <div class="cta-line">Rates change with the market — <strong>call before you load the truck</strong> and we'll quote today's price.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><span class="num">01</span><span class="txt">Weighed on site, in front of you</span></div>
+    <div class="trust-item"><span class="num">02</span><span class="txt">Cash or account payment, same day</span></div>
+    <div class="trust-item"><span class="num">03</span><span class="txt">Pickup for bulk loads</span></div>
+    <div class="trust-item"><span class="num">04</span><span class="txt">GST registered dealer</span></div>
+  </div>
+</div>
+
+<section id="materials" class="materials">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What We Deal In</div>
+      <h2>Eight Materials.<br>One Straightforward Deal.</h2>
+      <p>We only buy and sell what's listed below — so every quote you get from us is a quote we actually know the market for.</p>
+    </div>
+    <div class="mat-grid">
+
+      <div class="mat-card">
+        <div class="mat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="9" width="18" height="6" rx="1"/><line x1="3" y1="9" x2="21" y2="15"/></svg></div>
+        <h3>Iron</h3>
+        <p>Rods, angles, structural &amp; mixed scrap</p>
+      </div>
+
+      <div class="mat-card">
+        <div class="mat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M6 4v16M18 4v16M6 4h12M6 12h12M6 20h12"/></svg></div>
+        <h3>Steel</h3>
+        <p>Beams, girders &amp; heavy sections</p>
+      </div>
+
+      <div class="mat-card">
+        <div class="mat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="8" cy="12" r="4"/><circle cx="8" cy="12" r="1.6"/><circle cx="16" cy="12" r="4"/><circle cx="16" cy="12" r="1.6"/></svg></div>
+        <h3>Pipe</h3>
+        <p>MS, GI &amp; hollow section pipes</p>
+      </div>
+
+      <div class="mat-card">
+        <div class="mat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="4" y="6" width="16" height="3"/><rect x="4" y="11" width="16" height="3"/><rect x="4" y="16" width="16" height="3"/></svg></div>
+        <h3>Sheets</h3>
+        <p>MS sheets, plates &amp; cuttings</p>
+      </div>
+
+      <div class="mat-card">
+        <div class="mat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="4" y="4" width="8" height="8" rx="1"/><rect x="12" y="12" width="8" height="8" rx="1"/><line x1="9" y1="12" x2="9" y2="20"/><line x1="15" y1="4" x2="15" y2="12"/></svg></div>
+        <h3>Copper</h3>
+        <p>Wire, coils, utensils &amp; cable</p>
+      </div>
+
+      <div class="mat-card">
+        <div class="mat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="9" cy="9" r="4"/><circle cx="15" cy="15" r="4"/></svg></div>
+        <h3>Brass</h3>
+        <p>Fittings, rods &amp; turnings</p>
+      </div>
+
+      <div class="mat-card">
+        <div class="mat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 12a8 8 0 0 1 16 0M6.5 12a5.5 5.5 0 0 1 11 0M9 12a3 3 0 0 1 6 0"/></svg></div>
+        <h3>Wire</h3>
+        <p>Coiled &amp; loose wire, all gauges</p>
+      </div>
+
+      <div class="mat-card">
+        <div class="mat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M14 7l3 3-7 7-3-3z"/><path d="M8 17l-1.5 1.5M18.5 6.5A2.5 2.5 0 1 0 15 3l-1 1 3.5 3.5z"/></svg></div>
+        <h3>Hardware</h3>
+        <p>Nuts, bolts, fittings &amp; fixtures</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How It Works</div>
+      <h2>From Phone Call to Payment</h2>
+      <p>Four steps, whether you're clearing a single load or supplying regularly.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="stepnum">01</div>
+        <h3>Call or WhatsApp</h3>
+        <p>Tell us the material and rough quantity — a photo helps us quote faster.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">02</div>
+        <h3>Get a Quote</h3>
+        <p>We give you today's rate for that material, no surprises later.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">03</div>
+        <h3>Weigh &amp; Inspect</h3>
+        <p>At our yard or on pickup, weighed openly in front of you.</p>
+      </div>
+      <div class="step">
+        <div class="stepnum">04</div>
+        <h3>Get Paid</h3>
+        <p>Cash or account transfer, settled the same day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="sec-head light" style="margin-bottom:0;">
+        <div class="eyebrow">Why Balaji Metals</div>
+        <h2>Strength. Quality. Trust.<br>Not Just a Tagline.</h2>
+        <p>A scrap deal is only as good as the dealer's word. Here's what we hold ourselves to on every transaction.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/></svg></div>
+          <div><h3>Transparent Weighing</h3><p>Every load goes on the scale in front of you — no back-room weighing, no guesswork.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div><h3>Rates Quoted Upfront</h3><p>We tell you the price before the material moves — not after, and not lower than agreed.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8"><path d="M3 12l3-8h12l3 8-9 9z"/></svg></div>
+          <div><h3>All Eight Materials, One Dealer</h3><p>Iron to hardware — sort and sell everything in a single pickup instead of juggling buyers.</p></div>
+        </div>
+        <div class="why-item">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8"><rect x="3" y="7" width="14" height="10" rx="1"/><path d="M17 10h3l2 3v4h-5"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg></div>
+          <div><h3>Pickup Arranged</h3><p>Bulk load at your site? We arrange transport instead of asking you to haul it in.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Talk to Us Before You Sell</h2>
+      <p>Call, message on WhatsApp, or come by the yard — whichever's easiest.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Balaji Metals</h3>
+        <div class="role">Proprietor</div>
+
+        <div class="c-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg></div>
+          <div class="txt"><a href="tel:+918094860221">+91 80948 60221</a></div>
+        </div>
+
+        <div class="c-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+          <div class="txt"><a href="mailto:balajimetalsjaipur@gmail.com">balajimetalsjaipur@gmail.com</a></div>
+        </div>
+
+        <div class="c-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8"><path d="M12 21s7-6.3 7-11.5A7 7 0 0 0 5 9.5C5 14.7 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></svg></div>
+          <div class="txt">Tirupati Vihar-6, Shyam Nagar<br>Benad Road, Jhotwada<br>Jaipur – 302012 (Raj.)</div>
+        </div>
+
+        <div class="c-row">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c8102e" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="7" y1="14" x2="13" y2="14"/></svg></div>
+          <div class="txt gst">GSTIN: 08CDVPJ8782L1ZD</div>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=Shyam+Nagar+Jhotwada+Jaipur+302012&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Balaji Metals location map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="closing">
+  <div class="wrap">
+    <h2>Got Scrap to Move?</h2>
+    <p>Call us or send a photo on WhatsApp — we'll quote today's rate right away.</p>
+    <div class="cbtns">
+      <a href="tel:+918094860221" class="btn btn-primary">Call +91 80948 60221</a>
+      <a href="https://wa.me/918094860221" class="btn btn-ghost-light" target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><span class="b1">Balaji</span> <span class="b2">Metals</span></div>
+        <p>Buying &amp; selling Iron, Steel, Pipe, Sheets, Hardware, Copper, Brass and Wire in Jaipur.</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>Materials</h4>
+          <ul>
+            <li><a href="#materials">Iron &amp; Steel</a></li>
+            <li><a href="#materials">Pipe &amp; Sheets</a></li>
+            <li><a href="#materials">Copper &amp; Brass</a></li>
+            <li><a href="#materials">Wire &amp; Hardware</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+918094860221">+91 80948 60221</a></li>
+            <li><a href="mailto:balajimetalsjaipur@gmail.com">balajimetalsjaipur@gmail.com</a></li>
+            <li><a href="https://wa.me/918094860221" target="_blank" rel="noopener">WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Balaji Metals. All rights reserved.</span>
+      <span>GSTIN: 08CDVPJ8782L1ZD</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/918094860221" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16.02 2.667c-7.36 0-13.33 5.97-13.33 13.33 0 2.35.62 4.55 1.7 6.46L2.67 29.33l7.06-1.85a13.24 13.24 0 0 0 6.29 1.6h.01c7.36 0 13.33-5.97 13.33-13.33 0-3.56-1.39-6.91-3.9-9.43a13.24 13.24 0 0 0-9.43-3.9zm0 24.4h-.01a11.05 11.05 0 0 1-5.63-1.54l-.4-.24-4.19 1.1 1.12-4.08-.26-.42a11.03 11.03 0 0 1-1.7-5.89c0-6.11 4.97-11.08 11.08-11.08 2.96 0 5.74 1.15 7.84 3.25a11.02 11.02 0 0 1 3.24 7.84c0 6.11-4.97 11.06-11.09 11.06zm6.08-8.29c-.33-.17-1.97-.97-2.27-1.08-.31-.11-.53-.17-.75.17-.22.33-.86 1.08-1.06 1.3-.19.22-.39.25-.72.08-.33-.17-1.4-.51-2.66-1.63-.98-.87-1.65-1.95-1.84-2.28-.19-.33-.02-.5.15-.67.15-.15.33-.39.5-.58.17-.19.22-.33.33-.55.11-.22.06-.42-.03-.58-.08-.17-.75-1.8-1.02-2.47-.27-.65-.55-.56-.75-.57h-.64c-.22 0-.58.08-.88.42-.3.33-1.15 1.13-1.15 2.75s1.18 3.19 1.34 3.41c.17.22 2.32 3.54 5.63 4.96.79.34 1.4.55 1.88.7.79.25 1.51.21 2.08.13.63-.09 1.97-.8 2.25-1.58.28-.77.28-1.44.19-1.58-.08-.14-.3-.22-.63-.39z"/></svg>
+</a>
+
+<script>
+  document.querySelector('.navtoggle').addEventListener('click', function(){
+    var nav = document.querySelector('nav.primary');
+    var visible = nav.style.display === 'block';
+    nav.style.display = visible ? 'none' : 'block';
+    if(!visible){
+      nav.style.position='absolute';
+      nav.style.top='100%';
+      nav.style.left='0';
+      nav.style.right='0';
+      nav.style.background='#fbfaf7';
+      nav.style.padding='18px 28px';
+      nav.style.borderTop='1px solid rgba(0,0,0,.08)';
+      nav.querySelector('ul').style.flexDirection='column';
+      nav.querySelector('ul').style.gap='14px';
+    }
+  });
+</script>
+
+</body>
+</html>
